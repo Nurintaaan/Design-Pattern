@@ -7,6 +7,7 @@ class Quack implements QuackBehavior{
     }
     quack() {
       console.log(this.quackSound);  
+      console.log('quack, quack');
     }
 }
 
