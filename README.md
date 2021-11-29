@@ -5,7 +5,7 @@ Think design pattern something's like a recipe book, when you want to order chic
 So, design pattern is a vocabulary/look up terms for developer to talk about design, so we will focus on the design rather than implementation
 
 ## Design Principle
-- Separate something that always change and not 
+- separate something that always change and not 
 - focus on interface not implementation
 - compositon over inheritance
-
+- strive for loosely coupled design between objects and interact
