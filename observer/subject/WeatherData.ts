@@ -25,8 +25,15 @@ class WeatherData implements Subject {
         return this.pressure;
     }
 
-    measurementsChanged(temperature, humidity, pressure): void {
-        this.notifyObservers(temperature, humidity, pressure);
+    setMeasurements(temperature: number, humidity: number, pressure: number): void {
+        this.temperature = temperature;
+        this.humidity = humidity;
+        this.pressure = pressure;
+        this.measurementsChanged();
+    }
+
+    measurementsChanged(): void {
+        this.notifyObservers();
     }
 
     registerObserver(o: Observer): Array<Observer> {
@@ -39,9 +46,9 @@ class WeatherData implements Subject {
         this.observers.splice(index, 1);
     }
 
-    notifyObservers(temperature:number, humidity:number, pressure:number): void {
+    notifyObservers(): void {
         for (const observer of this.observers) {
-            observer.update(temperature, humidity, pressure);
+            observer.update(this.temperature, this.humidity, this.pressure);
         }
     }
 

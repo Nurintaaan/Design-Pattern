@@ -1,20 +1,16 @@
 import WeatherData from "./subject/WeatherData";
-import CurrentConditionDisplay from "./observers/CurrentConditionDisplay";
+import CurrentConditionsDisplay from "./observers/CurrentConditionDisplay";
+import StatisticsDisplay from "./observers/StatisticDisplay";
 import ForecastDisplay from "./observers/ForecastDisplay";
-import StatisticDisplay from "./observers/StatisticDisplay";
 
 function main() {
     const subject = new WeatherData();
-    
-    const currentDisplay = new CurrentConditionDisplay();
-    const forecastDisplay = new ForecastDisplay();
-    const statisticDisplay = new StatisticDisplay();
 
-    subject.registerObserver(currentDisplay);
-    subject.registerObserver(forecastDisplay);
-    subject.registerObserver(statisticDisplay);
+    const currentDisplay = new CurrentConditionsDisplay(subject);
+    const statisticsDisplay = new StatisticsDisplay(subject);
+    const forecastDisplay = new ForecastDisplay(subject);
 
-    subject.measurementsChanged(80, 65, 30.4);
+    subject.setMeasurements(80, 65, 30.4);
 }
 
 main();

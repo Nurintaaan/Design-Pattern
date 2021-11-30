@@ -1,15 +1,16 @@
 import Observer from "./Observer";
 import DisplayElement from "./DisplayElement";
+import WeatherData from "../subject/WeatherData";
 
 class ForecastDisplay implements Observer, DisplayElement {
     temperature: number;
     humidity: number;
     pressure: number;
+    weatherData: WeatherData;
 
-    constructor() {
-        this.temperature = 0;
-        this.humidity = 0;
-        this.pressure = 0;
+    constructor(weatherData: WeatherData) {
+        this.weatherData = weatherData;
+        this.weatherData.registerObserver(this);
     }
 
     update(temperature: number, humidity: number, pressure: number) {
