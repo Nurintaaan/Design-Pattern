@@ -13,10 +13,10 @@ class ForecastDisplay implements Observer, DisplayElement {
         this.weatherData.registerObserver(this);
     }
 
-    update(temperature: number, humidity: number, pressure: number) {
-        this.temperature = temperature;
-        this.humidity = humidity;
-        this.pressure = pressure;
+    update() {
+        this.temperature = this.weatherData.getTemperature();
+        this.humidity = this.weatherData.getHumidity();
+        this.pressure = this.weatherData.getPressure();
         this.display();
     }
 

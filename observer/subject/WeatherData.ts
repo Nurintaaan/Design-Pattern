@@ -48,7 +48,7 @@ class WeatherData implements Subject {
 
     notifyObservers(): void {
         for (const observer of this.observers) {
-            observer.update(this.temperature, this.humidity, this.pressure);
+            observer.update();
         }
     }
 
