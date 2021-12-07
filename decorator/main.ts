@@ -7,6 +7,7 @@ function main() {
     const mocha = new Mocha(darkRoast);
     const whip = new Whip(mocha);
     console.log(whip.cost());
+    console.log(whip.getDescription());
 }
 
 main();
