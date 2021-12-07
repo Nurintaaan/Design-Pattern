@@ -9,3 +9,4 @@ So, design pattern is a vocabulary/look up terms for developer to talk about des
 - focus on interface not implementation
 - compositon over inheritance
 - strive for loosely coupled design between objects and interact
+- classes should open to extension and close to modification
