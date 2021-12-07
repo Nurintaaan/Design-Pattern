@@ -8,3 +8,5 @@ function main() {
     const whip = new Whip(mocha);
     console.log(whip.cost());
 }
+
+main();
